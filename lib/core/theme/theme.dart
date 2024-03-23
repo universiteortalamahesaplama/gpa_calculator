@@ -1,26 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gpa_calculator/product/utility/constants/colors.dart';
 
-
 class ApplicationTheme {
-  
   ThemeData lightTheme = ThemeData().copyWith(
     brightness: Brightness.light,
     primaryColor: ColorData.primaryColor,
     textTheme: TextTheme(
-      
-      titleLarge: ThemeData().textTheme.titleLarge?.copyWith(
-        color: ColorData.textColor,
-      ),
-    ),
+        titleLarge: ThemeData().textTheme.titleLarge?.copyWith(
+              color: ColorData.textColor,
+            ),
+        labelLarge: ThemeData().textTheme.titleLarge?.copyWith(
+              color: ColorData.textColor,
+            ),
+        labelSmall: ThemeData().textTheme.titleLarge?.copyWith(
+              color: ColorData.textColor,
+            ),
+        bodySmall: ThemeData().textTheme.titleLarge?.copyWith(
+              color: ColorData.textColor,
+            ), ),
+            
 
     appBarTheme: const AppBarTheme(
-      color: ColorData.primaryColor,
+      color: ColorData.backgroundColor,
       centerTitle: true,
       elevation: 0,
-      iconTheme: IconThemeData(color: ColorData.backgroundColor),
+      iconTheme: IconThemeData(color: ColorData.primaryColor),
       titleTextStyle: TextStyle(
-        color: ColorData.backgroundColor,
+        color: ColorData.primaryColor,
         fontWeight: FontWeight.bold,
       ),
     ),
@@ -31,6 +38,7 @@ class ApplicationTheme {
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: ColorData.primaryColor,
       foregroundColor: ColorData.backgroundColor,
+      shape: CircleBorder(),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(

@@ -12,4 +12,12 @@ class PeriodNote {
       note: json['description'],
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'grade': grade,
+      'period': period,
+      'note': note,
+    };
+  }
 }

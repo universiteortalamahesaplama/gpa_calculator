@@ -1,45 +1,33 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:gpa_calculator/core/init/database/database_model.dart';
 
 @immutable
-class Lesson {
+class Lesson extends DatabaseModel<Lesson> {
   final int? id;
   final String? lesson;
   final double? credit;
   final double? note;
 
-  const Lesson({this.id, this.lesson, this.credit, this.note});
+  Lesson({this.id, this.lesson, this.credit, this.note});
 
-  Map<String, dynamic> toMap() {
-    final result = <String, dynamic>{};
+  Lesson.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        lesson = json['lesson'],
+        credit = json['credit'],
+        note = json['note'];
 
-    if (id != null) {
-      result.addAll({'id': id});
-    }
-    if (lesson != null) {
-      result.addAll({'lesson': lesson});
-    }
-    if (credit != null) {
-      result.addAll({'credit': credit});
-    }
-    if (note != null) {
-      result.addAll({'note': note});
-    }
-
-    return result;
+  @override
+  Map<String, dynamic> toJson(Lesson model) {
+    return {
+      'id': model.id,
+      'lesson': model.lesson,
+      'credit': model.credit,
+      'note': model.note,
+    };
   }
 
-  factory Lesson.fromMap(Map<String, dynamic> map) {
-    return Lesson(
-      id: map['id']?.toInt(),
-      lesson: map['lesson'],
-      credit: map['credit']?.toDouble(),
-      note: map['note']?.toDouble(),
-    );
+  @override
+  Lesson fromJson(Map<String, dynamic> json) {
+    return Lesson.fromJson(json);
   }
-
-  String toJson() => json.encode(toMap());
-
-  factory Lesson.fromJson(String source) => Lesson.fromMap(json.decode(source));
 }

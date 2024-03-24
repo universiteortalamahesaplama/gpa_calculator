@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:gpa_calculator/product/utility/constants/colors.dart';
 
-
 class ApplicationTheme {
-  
   ThemeData lightTheme = ThemeData().copyWith(
     brightness: Brightness.light,
     primaryColor: ColorData.primaryColor,
     textTheme: TextTheme(
-      
       titleLarge: ThemeData().textTheme.titleLarge?.copyWith(
-        color: ColorData.textColor,
-      ),
+            color: ColorData.textColor,
+          ),
     ),
-
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       color: ColorData.primaryColor,
       centerTitle: true,
       elevation: 0,
-      iconTheme: IconThemeData(color: ColorData.backgroundColor),
-      titleTextStyle: TextStyle(
-        color: ColorData.backgroundColor,
-        fontWeight: FontWeight.bold,
-      ),
+      iconTheme: const IconThemeData(color: ColorData.backgroundColor),
+      titleTextStyle: ThemeData().textTheme.titleLarge?.copyWith(
+            color: ColorData.backgroundColor,
+          ),
     ),
     bottomAppBarTheme: const BottomAppBarTheme(
       shape: CircularNotchedRectangle(),

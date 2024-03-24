@@ -11,7 +11,7 @@ class GanoProvider with ChangeNotifier {
   }
 
   Future<void> addGano(Lesson gano) async {
-    await GanoDatabase.instance.insert(gano.toMap());
+    await GanoDatabase.instance.insert(gano.toJson(gano));
     _ganoList.add(gano);
     notifyListeners();
   }

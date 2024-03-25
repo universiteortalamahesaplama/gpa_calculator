@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:gpa_calculator/product/notifiers/gano/gano_provider.dart';
-import 'package:gpa_calculator/product/notifiers/gano_database.dart';
+import 'package:gpa_calculator/product/database/gano_database.dart';
 
 class Home extends ConsumerStatefulWidget {
   const Home({super.key});

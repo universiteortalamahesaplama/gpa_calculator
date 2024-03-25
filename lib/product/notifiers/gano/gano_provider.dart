@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpa_calculator/product/models/lesson_model.dart';
-import 'package:gpa_calculator/product/notifiers/gano_database.dart';
+import 'package:gpa_calculator/product/database/gano_database.dart';
 
 class GanoProvider with ChangeNotifier {
   final List<Lesson> _ganoList = [];

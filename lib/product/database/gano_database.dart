@@ -13,6 +13,7 @@ class GanoDatabase extends InitDatabase<Lesson> {
   final String _note = 'note';
 
   Database? _database;
+  @override
   Future<bool> open() async {
     try {
       _database = await openDatabase(
